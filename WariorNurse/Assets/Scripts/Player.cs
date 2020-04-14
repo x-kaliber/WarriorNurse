@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public GameObject GameOver;
     public GameObject ScoreManager;
 
+
     public Text HealthDisplay;
     public Text StaminaDisplay;
 
@@ -75,7 +76,7 @@ public class Player : MonoBehaviour
 
         if(timeElapsed >= TimedDmG)
         {
-            SHealth -= 2;
+            SHealth -= 1;
             timeElapsed = 0f;
         }
     }
