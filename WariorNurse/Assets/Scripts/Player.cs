@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
     public float KeyDelay = 1f;
     public int Health = 3;
     public GameObject Effect;
-
+    public Text HealthDisplay;
+    public GameObject GameOver;
 
     private float timePassed = 0f;
     private Vector2 targetPos;
@@ -24,9 +25,12 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        HealthDisplay.text = Health.ToString();
+
         if (Health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameOver.SetActive(true);
+            Destroy(gameObject);
         }
 
         timePassed += Time.deltaTime;
