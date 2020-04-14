@@ -10,6 +10,13 @@ public class Obsticle : MonoBehaviour
 
     public GameObject Effect;
 
+    private Shake shake;
+    
+    void Start()
+    {
+        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
+    }
+
     private void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
@@ -18,7 +25,7 @@ public class Obsticle : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
+            shake.CamShake();
             Instantiate(Effect, transform.position, Quaternion.identity);
 
             other.GetComponent<Player>().Health -= Damage;
