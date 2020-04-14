@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public int score;
+
+
     public Text scoreDisplay;
     public Text scoreDisplay2;
 
@@ -19,9 +21,9 @@ public class ScoreManager : MonoBehaviour
     {
         if(other.CompareTag("Enemy"))
         {
-            // increase Score
-            score++;
-            Debug.Log("Your Score is :" + score);
+                // increase Score
+                score++;
+                Debug.Log("Your Score is :" + score);
         }
     }
 }

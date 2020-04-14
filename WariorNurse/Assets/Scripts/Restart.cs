@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
- private void Update()
+    public GameObject ScoreManager;
+
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            ScoreManager.SetActive(true);
         }
     }
 }

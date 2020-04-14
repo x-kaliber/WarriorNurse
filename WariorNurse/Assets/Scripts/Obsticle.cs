@@ -29,6 +29,15 @@ public class Obsticle : MonoBehaviour
             Instantiate(Effect, transform.position, Quaternion.identity);
 
             other.GetComponent<Player>().Health -= Damage;
+            FindObjectOfType<AudioManager>().Play("Impact");
+            if(other.GetComponent<Player>().Health >= 1)
+            {
+                FindObjectOfType<AudioManager>().Play("PainSound");
+            }
+            if (other.GetComponent<Player>().Health == 0)
+            {
+                FindObjectOfType<AudioManager>().Play("Explosion");
+            }
             Debug.Log("Awww the pain...." + other.GetComponent<Player>().Health);
                 Destroy(gameObject);
         }
