@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 267683884}
   - component: {fileID: 267683883}
   m_Layer: 0
-  m_Name: Untitled
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,6 +158,7 @@ MonoBehaviour:
   MinHeight: -10
   KeyDelay: 0.5
   Health: 3
+  Effect: {fileID: 6859131327132436843, guid: ffdeeada73cea094eb80f7a318460ab1, type: 3}
 --- !u!212 &267683881
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -268,67 +269,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.54, y: 2.54}
   m_EdgeRadius: 0
---- !u!1 &330353187
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 330353188}
-  m_Layer: 0
-  m_Name: EnemyPatern01
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &330353188
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330353187}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.09375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 366131464}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &366131463
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 366131464}
-  m_Layer: 0
-  m_Name: SpawnPoint01
-  m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &366131464
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 366131463}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 330353188}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +395,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744856cbbf59c2a41a24e88d350c2717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 4811380154302447967, guid: 71cb3b78467d6764882ba0091e639548, type: 3}
+  EnemyPatern:
+  - {fileID: 8383616068397008488, guid: 1c109b83916dc0d41bc33b1342dc9ac9, type: 3}
+  - {fileID: 1931931072495697466, guid: 0ceeaf31be4cbe8469741b64ffbbe69c, type: 3}
+  - {fileID: 4962587541097362644, guid: c92a533992cf26c4690963e19a7bc8af, type: 3}
+  - {fileID: 2055019067056513287, guid: aac0668ebad7e0e4e8c5a431fb533f5b, type: 3}
+  - {fileID: 5748657497067709657, guid: 6e451b75b546bb349a955b199a02dc28, type: 3}
+  - {fileID: 4592321735693374713, guid: 7c3f89b372da4974ab191278d67a0782, type: 3}
+  - {fileID: 5610469433732217016, guid: 6715e9e5dbbdc4d44be20b7e6623d451, type: 3}
+  - {fileID: 6300628634251143217, guid: 718b9c0781fc3a149839e8561456c4c1, type: 3}
+  - {fileID: 8769571814912609400, guid: fe78b1cc1faf2a345be58bb258a57c7e, type: 3}
+  - {fileID: 8769571814912609400, guid: fe78b1cc1faf2a345be58bb258a57c7e, type: 3}
+  - {fileID: 1414157490783294126, guid: 383561cd5c2ea5d4dbbf4481071e96c6, type: 3}
+  - {fileID: 6145285411605763605, guid: 4a92361b22909be46852ad161007f0d8, type: 3}
+  - {fileID: 3412265781015631212, guid: e3b37ea9cb1f32a4883a19fc45aae854, type: 3}
+  - {fileID: 3816334100890955206, guid: b6822c96d8913c149b911fbab10af2b0, type: 3}
+  - {fileID: 3365875596430775681, guid: 9444987b8e651ff429259562db347ad5, type: 3}
+  - {fileID: 6949294114737621993, guid: 96abddfb20aa7d44f97db09fe1605997, type: 3}
+  - {fileID: 8482348374058012060, guid: aa223eb0e0780b5429fcc7a53b01a936, type: 3}
+  - {fileID: 8962377386208643489, guid: cb294908820ad7e4d9d73ab03610eea8, type: 3}
+  - {fileID: 8048287501868652637, guid: 768e263cdfddeb7429690fba59530f7b, type: 3}
+  - {fileID: 903578695656944603, guid: cbbf74716154bbd43ab7b592cfe9dcec, type: 3}
+  - {fileID: 1623214444582934561, guid: dfc552583ce837b4f87588efee73b368, type: 3}
+  - {fileID: 9119640434887702432, guid: 67a697a7d2c31764397bf6cb377139a8, type: 3}
+  - {fileID: 4243661157109036005, guid: aaa8ebedfd8dad04da2df39452afcad2, type: 3}
+  - {fileID: 7944154301657486708, guid: 89722571febd2e14197b191363d1ee22, type: 3}
+  - {fileID: 5025097076603975084, guid: 8d484d5113cb24c4b8dfda01bfa0bf0a, type: 3}
   StartTimeBtwSpawn: 1.5
   DecreaseTime: 0.02
   MinTime: 0.65

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+
 
 public class Player : MonoBehaviour
 {
@@ -11,15 +14,21 @@ public class Player : MonoBehaviour
     public float MaxHeight;
     public float MinHeight;
     public float KeyDelay = 1f;
-    public int Health;
+    public int Health = 3;
+    public GameObject Effect;
+
 
     private float timePassed = 0f;
     private Vector2 targetPos;
 
 
-
     private void Update()
     {
+        if (Health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         timePassed += Time.deltaTime;
 
 
@@ -27,12 +36,13 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && timePassed > KeyDelay && transform.position.y < MaxHeight  || Input.GetKeyDown(KeyCode.W) && timePassed > KeyDelay && transform.position.y < MaxHeight )
         {
+            Instantiate(Effect, transform.position, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y + increment);
             timePassed = 0f;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && timePassed > KeyDelay && transform.position.y > MinHeight || Input.GetKeyDown(KeyCode.S) && timePassed > KeyDelay && transform.position.y > MinHeight)
         {
-
+            Instantiate(Effect, transform.position, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y - increment);
             timePassed = 0f;
         }
